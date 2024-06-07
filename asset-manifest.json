@@ -1,16 +1,17 @@
 {
   "files": {
     "main.css": "/Ecommerce-MERN-PROJECT/static/css/main.3feafe8c.css",
-    "main.js": "/Ecommerce-MERN-PROJECT/static/js/main.f1e7e6be.js",
+    "main.js": "/Ecommerce-MERN-PROJECT/static/js/main.cbe56df9.js",
     "static/js/453.3f74345f.chunk.js": "/Ecommerce-MERN-PROJECT/static/js/453.3f74345f.chunk.js",
+    "static/media/hand_icon.png": "/Ecommerce-MERN-PROJECT/static/media/hand_icon.9c7487cecb600f30901b.png",
     "index.html": "/Ecommerce-MERN-PROJECT/index.html",
     "static/media/Login.JSX": "/Ecommerce-MERN-PROJECT/static/media/Login.c3f6c13aa38f7e0fd6f6.JSX",
     "main.3feafe8c.css.map": "/Ecommerce-MERN-PROJECT/static/css/main.3feafe8c.css.map",
-    "main.f1e7e6be.js.map": "/Ecommerce-MERN-PROJECT/static/js/main.f1e7e6be.js.map",
+    "main.cbe56df9.js.map": "/Ecommerce-MERN-PROJECT/static/js/main.cbe56df9.js.map",
     "453.3f74345f.chunk.js.map": "/Ecommerce-MERN-PROJECT/static/js/453.3f74345f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3feafe8c.css",
-    "static/js/main.f1e7e6be.js"
+    "static/js/main.cbe56df9.js"
   ]
 }
