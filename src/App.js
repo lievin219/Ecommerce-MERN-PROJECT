@@ -6,7 +6,7 @@ import Shop from './Pages/Shop';
 import Shopcategory from './Pages/Shopcategory'
 import Production from './Pages/Production';
 import Cart from './Pages/Cart';
-import Login from './Pages/Login.JSX';
+import Login from './Pages/Login.jsx';
 
 function App() {
   return (
