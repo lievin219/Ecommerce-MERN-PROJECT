@@ -1,17 +1,22 @@
 {
   "files": {
-    "main.css": "/Ecommerce-MERN-PROJECT/static/css/main.3feafe8c.css",
-    "main.js": "/Ecommerce-MERN-PROJECT/static/js/main.cbe56df9.js",
+    "main.css": "/Ecommerce-MERN-PROJECT/static/css/main.75264319.css",
+    "main.js": "/Ecommerce-MERN-PROJECT/static/js/main.f29858c1.js",
     "static/js/453.3f74345f.chunk.js": "/Ecommerce-MERN-PROJECT/static/js/453.3f74345f.chunk.js",
+    "static/media/hero_image.png": "/Ecommerce-MERN-PROJECT/static/media/hero_image.09ff1c4114792a6143c2.png",
+    "static/media/exclusive_image.png": "/Ecommerce-MERN-PROJECT/static/media/exclusive_image.e8118f2149d9cb916980.png",
+    "static/media/product_4.png": "/Ecommerce-MERN-PROJECT/static/media/product_4.ea0420ca9cec08d6df05.png",
+    "static/media/product_2.png": "/Ecommerce-MERN-PROJECT/static/media/product_2.d4e74f367160ec10fb34.png",
+    "static/media/product_1.png": "/Ecommerce-MERN-PROJECT/static/media/product_1.5a757396ee7ff5dd91c1.png",
+    "static/media/product_3.png": "/Ecommerce-MERN-PROJECT/static/media/product_3.be48863df18b272b8f59.png",
     "static/media/hand_icon.png": "/Ecommerce-MERN-PROJECT/static/media/hand_icon.9c7487cecb600f30901b.png",
     "index.html": "/Ecommerce-MERN-PROJECT/index.html",
-    "static/media/Login.JSX": "/Ecommerce-MERN-PROJECT/static/media/Login.c3f6c13aa38f7e0fd6f6.JSX",
-    "main.3feafe8c.css.map": "/Ecommerce-MERN-PROJECT/static/css/main.3feafe8c.css.map",
-    "main.cbe56df9.js.map": "/Ecommerce-MERN-PROJECT/static/js/main.cbe56df9.js.map",
+    "main.75264319.css.map": "/Ecommerce-MERN-PROJECT/static/css/main.75264319.css.map",
+    "main.f29858c1.js.map": "/Ecommerce-MERN-PROJECT/static/js/main.f29858c1.js.map",
     "453.3f74345f.chunk.js.map": "/Ecommerce-MERN-PROJECT/static/js/453.3f74345f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3feafe8c.css",
-    "static/js/main.cbe56df9.js"
+    "static/css/main.75264319.css",
+    "static/js/main.f29858c1.js"
   ]
 }
