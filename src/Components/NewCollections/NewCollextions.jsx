@@ -5,7 +5,7 @@ import item from '../Items/Items.jsx'
 
 const NewCollextions = () => {
   return (
-    <div className='newcollection'>
+    <div className='newcollection'>     
         <h1>New Collection </h1>
         <hr />
         <div className='collections'>
