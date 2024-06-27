@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Ecommerce-MERN-PROJECT/static/css/main.9f5a7146.css",
-    "main.js": "/Ecommerce-MERN-PROJECT/static/js/main.44e6baab.js",
+    "main.css": "/Ecommerce-MERN-PROJECT/static/css/main.065a65e3.css",
+    "main.js": "/Ecommerce-MERN-PROJECT/static/js/main.e3aad4b8.js",
     "static/js/453.b81ed300.chunk.js": "/Ecommerce-MERN-PROJECT/static/js/453.b81ed300.chunk.js",
     "static/media/banner_kids.png": "/Ecommerce-MERN-PROJECT/static/media/banner_kids.fff815a581793a7380fb.png",
     "static/media/banner_women.png": "/Ecommerce-MERN-PROJECT/static/media/banner_women.5a27fc4e4533e57e4676.png",
@@ -46,12 +46,12 @@
     "static/media/product_35.png": "/Ecommerce-MERN-PROJECT/static/media/product_35.073b8b5de77cfc979821.png",
     "static/media/hand_icon.png": "/Ecommerce-MERN-PROJECT/static/media/hand_icon.9c7487cecb600f30901b.png",
     "index.html": "/Ecommerce-MERN-PROJECT/index.html",
-    "main.9f5a7146.css.map": "/Ecommerce-MERN-PROJECT/static/css/main.9f5a7146.css.map",
-    "main.44e6baab.js.map": "/Ecommerce-MERN-PROJECT/static/js/main.44e6baab.js.map",
+    "main.065a65e3.css.map": "/Ecommerce-MERN-PROJECT/static/css/main.065a65e3.css.map",
+    "main.e3aad4b8.js.map": "/Ecommerce-MERN-PROJECT/static/js/main.e3aad4b8.js.map",
     "453.b81ed300.chunk.js.map": "/Ecommerce-MERN-PROJECT/static/js/453.b81ed300.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f5a7146.css",
-    "static/js/main.44e6baab.js"
+    "static/css/main.065a65e3.css",
+    "static/js/main.e3aad4b8.js"
   ]
 }
