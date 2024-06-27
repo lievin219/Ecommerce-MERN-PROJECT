@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import  { ShopContect } from '../Context/ShopContext'
+import  { ShopContect } from '../Context/ShopContext.jsx'
 import { useParams } from 'react-router-dom'
 import BreadCrums from '../Components/BreadCrums/BreadCrums'
 
@@ -7,7 +7,7 @@ import BreadCrums from '../Components/BreadCrums/BreadCrums'
      const  {all_products}=useContext(ShopContect)
      const{productId}=useParams()
       const product=all_products.find((e)=>{
-           e.id===Number(productId)
+          return  e.id===Number(productId)
       })
     return(
         <div>
