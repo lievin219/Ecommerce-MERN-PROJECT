@@ -29,6 +29,20 @@ const ProductDisplay = (props) => {
               <p>(122)</p>
 
             </div>
+            <div className='productdisplay-right-prices'>
+              
+            <div className='productdisplay-right-prices-old'>
+              ${product.old_price}
+            </div>
+            <div className='productdisplay-right-prices-new'>
+              ${product.new_price}
+            </div>
+            <div className='productdisplay-right-description'>
+            Our e-commerce platform, ShopSphere, is a comprehensive online marketplace designed to 
+            provide a seamless shopping experience for customers and robust tools for sellers. Whether you're looking for the latest fashion trends, cutting-edge electronics, home essentials, or unique handmade items, ShopSphere has something for everyone.
+            </div>
+            </div>
+            
 
           </div>
       
