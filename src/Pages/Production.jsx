@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import  { ShopContect } from '../Context/ShopContext.jsx'
 import { useParams } from 'react-router-dom'
 import BreadCrums from '../Components/BreadCrums/BreadCrums'
+import DescriptionBox from '../Components/DescriptionBox/DescriptionBox.jsx'
 import ProductDisplay from '../Components/productDisplay/ProductDisplay.jsx'
 
  const  Production=()=>{
@@ -14,6 +15,7 @@ import ProductDisplay from '../Components/productDisplay/ProductDisplay.jsx'
         <div>
           <BreadCrums product={product}/>
           <ProductDisplay product={product}/>
+          <DescriptionBox/>
         </div>
     )
  }
