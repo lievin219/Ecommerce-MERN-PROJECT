@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import  { ShopContect } from '../Context/ShopContext.jsx'
 import { useParams } from 'react-router-dom'
+import RelatedProduct from '../Components/RelatedProduct/RelatedProduct.jsx'
 import BreadCrums from '../Components/BreadCrums/BreadCrums'
 import DescriptionBox from '../Components/DescriptionBox/DescriptionBox.jsx'
 import ProductDisplay from '../Components/productDisplay/ProductDisplay.jsx'
@@ -16,6 +17,7 @@ import ProductDisplay from '../Components/productDisplay/ProductDisplay.jsx'
           <BreadCrums product={product}/>
           <ProductDisplay product={product}/>
           <DescriptionBox/>
+          <RelatedProduct/>
         </div>
     )
  }
