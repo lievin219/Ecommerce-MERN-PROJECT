@@ -33,7 +33,8 @@ import all_products from '../Components/Assets/Assets/all_product'
     return(
         <ShopContect.Provider value={contextvalue}>
             {props.children}
-        </ShopContect.Provider>   
+        </ShopContect.Provider> 
+          
     )
  }
  export default ShopContextProvider
