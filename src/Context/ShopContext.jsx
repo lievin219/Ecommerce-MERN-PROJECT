@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { createContext } from 'react'
 import all_products from '../Components/Assets/Assets/all_product'
+// import all_product from '../Components/Assets/Assets/all_product'
 
  export const ShopContect=createContext(null)
  const  getdefaoulcart=()=>{
@@ -28,8 +29,32 @@ import all_products from '../Components/Assets/Assets/all_product'
            ...prev,[itemId]:prev[itemId]-1
         }))
  }
+  const getTotalCartAmount=()=>{
+   let totalamount=0;
+   for(let items in CartItems){
+       if(CartItems[items] > 0){
+          let itemInfo=all_products.find((product)=>product.id===Number(items))
+          totalamount +=itemInfo.new_price*CartItems[items]
+         // totalamount +='it is working but no amount is being dispalyed'
+       }
+      
+   }
+   return totalamount 
    
- const contextvalue={all_products,CartItems,addtoCart,removefromCart}
+
+  }
+   const getTotlCartItems=()=>{
+       let totalItems=0;
+        for( const item in CartItems ){
+          if(CartItems[item]>0){
+             totalItems +=CartItems[item]
+          }
+
+        }
+         return  totalItems
+   }
+   
+ const contextvalue={getTotlCartItems,getTotalCartAmount,all_products,CartItems,addtoCart,removefromCart}
     return(
         <ShopContect.Provider value={contextvalue}>
             {props.children}

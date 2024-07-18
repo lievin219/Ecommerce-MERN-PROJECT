@@ -63,7 +63,7 @@ import { ShopContect } from '../../Context/ShopContext'
 import remove_icon from '../Assets/Assets/cart_cross_icon.png'
 
 const CartItem = () => {
-     const {all_products,removefromCart,CartItems}=useContext(ShopContect)
+     const { getTotlCartItems,getTotalCartAmount,all_products,removefromCart,CartItems}=useContext(ShopContect)
   return (
     <div className='cartitems'>
          <div className='cartitems-format-main'>
@@ -84,7 +84,7 @@ const CartItem = () => {
                <p>{e.name}</p>
                <p>${e.new_price}</p>
                <button className='cartitems-quantity'>{CartItems[e.id]}</button>
-               <p>{e.new_price*CartItems[e.id]}</p>
+               <p>${e.new_price*CartItems[e.id]}</p>
                <img className='cartitems-remove-icon' src={remove_icon}     onClick={()=>{
                   removefromCart(e.id)
                }} alt="" />
@@ -94,8 +94,43 @@ const CartItem = () => {
         }else{
            return null
         }
+       
+
        })}
+        <div className="cartitems-down">
+          <div className="cartitems-total">
+            <h1>Cart Totals</h1>
+            <div>
+               <div className='cartitems-total-item'>
+                    <p>SubTotal</p>
+                    <p>${getTotalCartAmount()}</p>
+               </div>
+               <hr />
+               <div className='cartitems-total-item'>
+                 <p>Sheeping fee</p>
+                 <p>Free</p>
+               </div>
+               <hr />
+               <div className='cartitems-total-item'>
+           <h3>
+             Total
+           </h3>
+           <h3> ${getTotalCartAmount()}</h3>
+               </div>
+            </div>
+            <button>Procced To Check Out</button>
+          </div>
+          <div className='cartitems-promocode'>
+            <p>if you have a promo code ,Enter it here</p>
+            <div className='cartitems-promobox'>
+               <input type="text"  placeholder='promocode' />
+               <button>submitt</button>
+
+            </div>
+         </div>
          
+           </div>
+        
     </div>
   )
 }
