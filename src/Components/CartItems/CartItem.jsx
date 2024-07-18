@@ -59,11 +59,11 @@
 
 import React, { useContext } from 'react'
 import './CartItems.css'
-import { ShopContect } from '../../Context/ShopContext'
+import { ShopContect } from '../../Context/ShopContext'        
 import remove_icon from '../Assets/Assets/cart_cross_icon.png'
 
 const CartItem = () => {
-     const {all_products,removefromCart,CartItem}=useContext(ShopContect)
+     const {all_products,removefromCart,CartItems}=useContext(ShopContect)
   return (
     <div className='cartitems'>
          <div className='cartitems-format-main'>
@@ -77,15 +77,15 @@ const CartItem = () => {
          </div>
         <hr/>
        {all_products.map((e)=>{
-        if(CartItem[e.id]>0){
+        if(CartItems[e.id]>0){
            return  <div>
-           <div  className='cartitems-format'>
-               <img src={e.image} alt=""  className='carticon-produc-icon'/>
+           <div  className='cartitems-format cartitems-format-main'>
+               <img src={e.image} alt=""  className='carticon-product-icon'/>
                <p>{e.name}</p>
                <p>${e.new_price}</p>
-               <button className='cartitems-quantity'>cartitems[e.id]</button>
-               <p>{e.new_price*CartItem[e.id]}</p>
-               <img src={remove_icon}  onClick={()=>{
+               <button className='cartitems-quantity'>{CartItems[e.id]}</button>
+               <p>{e.new_price*CartItems[e.id]}</p>
+               <img className='cartitems-remove-icon' src={remove_icon}     onClick={()=>{
                   removefromCart(e.id)
                }} alt="" />
            </div>

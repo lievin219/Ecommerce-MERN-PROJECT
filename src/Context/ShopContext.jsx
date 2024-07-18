@@ -11,7 +11,7 @@ import all_products from '../Components/Assets/Assets/all_product'
       return cart;
 }
  const ShopContextProvider=(props)=>{
-    const[CartItem,setCartItem]=useState(getdefaoulcart());
+    const[CartItems,setCartItem]=useState(getdefaoulcart());
     // const contextvalue={all_products,CartItem}
     
 
@@ -21,7 +21,7 @@ import all_products from '../Components/Assets/Assets/all_product'
                 
              }
             ))
-             console.log(CartItem)
+             console.log(CartItems)
       }
       const removefromCart=(itemId)=>{
         setCartItem((prev)=>({
@@ -29,7 +29,7 @@ import all_products from '../Components/Assets/Assets/all_product'
         }))
  }
    
- const contextvalue={all_products,CartItem,addtoCart,removefromCart}
+ const contextvalue={all_products,CartItems,addtoCart,removefromCart}
     return(
         <ShopContect.Provider value={contextvalue}>
             {props.children}
