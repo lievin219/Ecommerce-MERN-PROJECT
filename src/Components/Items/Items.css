@@ -1,5 +1,8 @@
 .item{
-    width:35opx;
+    width:280px;
+}
+.item img{
+      width:280px
 }
 .item p{
    font-size: 20px;
