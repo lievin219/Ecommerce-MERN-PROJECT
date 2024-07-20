@@ -21,7 +21,7 @@ const Hero = () => {
             </div>
              <div className='hero-lastest-icon'>
                 <div> lastest collection</div>
-                <img src={arrow_icon} alt="" />
+                <img src={arrow_icon} alt=""/>
              </div>
         </div>
         <div className='hero-right'>
