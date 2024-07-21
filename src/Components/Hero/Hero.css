@@ -66,4 +66,16 @@ font-size: 22px;
          font-size: 60px;
      }
 }
+@media(max-width:1024px){
+     .hero-left{
+         padding-left: 100px;
+
+     }
+     .hero-left h2{
+     font-size: 18px;
+     }
+     .hero-left p{
+        font-size:60px ;
+     }
+}
   
