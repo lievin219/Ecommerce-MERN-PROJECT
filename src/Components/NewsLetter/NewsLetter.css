@@ -55,5 +55,115 @@
 @media(max-width:1280px){
       .newsletter{
            padding:0px 80px;
+           margin-bottom: 120px;
+            gap: 20px;
       }
+      .newsletter h1 {
+           font-size: 36px;
+      }
+      .newsletter p{
+           font-size: 20px;
+      }
+      .newsletter div{
+           width:  600px ;
+            height:  60px;
+      }
+      .newsletter div input{
+           width:  400px;
+            
+      }
+       .newsletter div button{
+          width:160px;
+          height: 60px;
+       }
+}
+@media(max-width:1024px){
+     .newsletter{
+        
+          margin-bottom: 60px;
+          
+     }
+     .newsletter h1 {
+          font-size: 29px;
+     }
+     .newsletter p{
+          font-size: 14px;
+     }
+     .newsletter div{
+          width:  500px ;
+           height:  50px;
+     }
+     .newsletter div input{
+          width:  300px;
+           font-size: 14px;
+          
+           
+     }
+      .newsletter div button{
+         width:120px;
+         height:60px;
+          font-size:15px
+      }
+}
+@media(max-width:800px){
+     .newsletter{
+        
+          margin-bottom: 30px;
+          height: 35vh;
+          
+     }
+     .newsletter h1 {
+          font-size: 18px;
+     }
+     .newsletter p{
+          font-size: 12px;
+     }
+     .newsletter div{
+          width:  400px ;
+           height:  40px;
+     }
+     .newsletter div input{
+          width:  200px;
+           font-size: 12px;
+          
+           
+     }
+      .newsletter div button{
+         width:100px;
+         height:40px;
+          font-size:13px
+      }
+}
+@media(max-width:500px){
+     .newsletter{
+        
+width:90%;
+padding:0;
+gap:15px;
+height: 25vh;
+          
+     }
+     .newsletter h1 {
+          font-size: 16px;
+     }
+     .newsletter p{
+          font-size: 13px;
+          align-items: center;
+     }
+     .newsletter div{
+          width:  200px ;
+           height:  40px;
+          
+     }
+     .newsletter div input{
+          width:  120px;
+           font-size: 12px;
+          
+           
+     }
+      /* .newsletter div button{
+         width:75px;
+         height:25px;
+          font-size:11px
+      } */
 }

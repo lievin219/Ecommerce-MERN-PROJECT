@@ -38,3 +38,30 @@
     font-weight: 300;
     color:#787878
 }
+@media(max-width:1280px){
+     .shopcategory-banner{
+         margin:20px  auto;
+          width:90%;
+     }
+     .shopcategory-index{
+         margin:  auto;
+          width:90%
+     }
+     .shopcategory-sort{
+         padding: 5px 10px;
+          font-size: 12px;
+     }
+     .shopcategory-index p{
+         font-size: 12px;
+     }
+     .shopcategory-products{
+         width: 90%;
+         margin:10px auto;
+         gap:40px;
+
+
+     }
+     .shopcategory-products .item{
+        margin: auto;
+     }
+    }
