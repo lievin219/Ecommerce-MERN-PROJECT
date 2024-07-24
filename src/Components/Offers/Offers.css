@@ -45,3 +45,109 @@
       justify-content: flex-end;
       padding: 50px;
 }
+@media(max-width:1280px){
+      .offers{
+           padding:0px 80px;
+            margin-bottom: 120px;
+      }
+      .offers-left{
+           gap: 10px;
+      }
+      .offers-left h1 {
+           font-size: 40px;
+      }
+      .offers-left p{
+           font-size:15px ;
+      }
+      .offers-right img{
+           width:300px
+      }
+      .offers-left button{
+           width:220px;
+           height:50px;
+           font-size: 18px;
+      }
+      .offers-right {
+           padding-top: 30px;
+      }
+}
+@media(max-width:1024px){
+      .offers{
+           padding:0px 80px;
+            margin-bottom: 80px;
+            height: 40vh;
+      }
+      .offers-left{
+           gap: 10px;
+      }
+      .offers-left h1 {
+           font-size: 30px;
+      }
+      .offers-left p{
+           font-size:13px ;
+      }
+      .offers-right img{
+           width:200px;
+           
+      }
+      .offers-left button{
+           width:180px;
+           height:30px;
+           font-size: 14px;
+      }
+      .offers-right {
+           padding-top: 10px;
+      }
+}
+@media(max-width:800px){
+     .offers{
+          
+           margin-bottom: 60px;
+         
+     }
+     .offers-left{
+          gap: 10px;
+     }
+     .offers-left h1 {
+          font-size: 22px;
+     }
+     .offers-left p{
+          font-size:13px ;
+     }
+     .offers-right img{
+          width:100px;
+          
+     }
+     .offers-left button{
+          width:120px;
+          height:20px;
+          font-size: 12px;
+     }
+  
+}
+@media(max-width:500px){
+      .offers{
+          height: 25vh;
+           display:flex;
+            
+      }.offers-left{
+            gap:10px;
+            
+              padding-top: 40px;
+      }.offers-left h1{
+          font-size: 13px;
+          font-weight: 13px;
+      }
+      .offers-left p{
+           font-size: 10px;
+            /* font-weight: 13px; */
+      }
+      .offers-left button{
+           width:80px;
+      }
+      
+      .offers-right img{
+width: 95px;
+padding-top: 40px;
+      }
+}
