@@ -94,26 +94,62 @@ font-size: 22px;
             width:65px;
         }
         .hero-lastest-icon{
-            gap: 10px;
-            width:250px;
-            height: 60px;
-            margin-top: 20px;
-            font-size: 18px;
+          
+            width:220px;
+            height: 50px;
+           
+            font-size: 16px;
         }
         .hero-right img{
-            width: 500px;
+            width: 400px;
         }
        }
-/* @media(max-width:1024px){
-     .hero-left{
-         padding-left: 100px;
+       @media(max-width:800px){
+        .hero-left{
+       padding-left: 30px;
+      
+        }
+        .hero-left h2{
+            font-size: 16px;
+        }
+        .hero-left p{
+            font-size: 35px;
+        }
+        .hero-hand-icon img{
+            width:45px;
+        }
+        .hero-lastest-icon{
+          
+            width:170px;
+            height: 30px;
+           
+            font-size: 15px;
+        }
+        .hero-right img{
+            width: 300px;
+        }
+       }
+       @media(max-width:500px){
+             .hero{
+                 display: flex;
+                 flex-direction: column;
+             }
+             .hero-right{
+                 display: none;
 
-     }
-     .hero-left h2{
-     font-size: 18px;
-     }
-     .hero-left p{
-        font-size:60px ;
-     }
-}
-   */
+             }
+             .hero-left h2{
+                 font-size: 18px;
+             }
+             .hero-left p{
+                 font-size: 45px;
+             }
+             .hero-hand-icon img{
+                 width:60px
+             }
+             .hero-lastest-icon{
+                 width:200px;
+                 height: 45px;
+                 font-size: 14px;
+             }
+            }
