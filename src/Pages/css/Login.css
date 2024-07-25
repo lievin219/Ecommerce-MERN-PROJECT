@@ -87,4 +87,48 @@
              margin-top: 20px;
             
        }
-}
+       .loginsignuppage-fields input{
+             height: 65px;
+              width:93%;
+       }
+       .loginsignup-container button{
+             width:100%;
+              
+       }
+       .loginsignup-login{
+             font-size: 16px;
+
+       }
+       .loginsignup-agree{
+             font-size: 14px;
+              gap:10px;
+       }}
+       @media(max-width:800px){
+             .loginsignup-container{
+                   padding:20px 30px;
+                    
+             }
+             .loginsignup-container h1{
+                   font-size: 24px;
+
+             }
+             .loginsignuppage-fields{
+                   margin-top: 20px;
+             }
+             .loginsignuppage-fields input{
+                   height:50px;
+                  
+
+             }
+             .loginsignup-container button{
+                   height:50px;
+                    font-size: 16px;
+             }
+             /* .loginsignup-agree{
+                   padding-left: -10px;
+                   gap:0px;
+             } */
+
+       }
+      
+      
