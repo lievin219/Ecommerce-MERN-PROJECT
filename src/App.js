@@ -2,6 +2,7 @@
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
+
 import Shop from './Pages/Shop';
 import Shopcategory from './Pages/Shopcategory'
 import Production from './Pages/Production';
@@ -11,6 +12,7 @@ import Footer from './Components/Footer/Footer.jsx';
 import men_banner from './Components/Assets/Assets/banner_mens.png'
 import women_banner from './Components/Assets/Assets/banner_women.png'
 import kids_banner from './Components/Assets/Assets/banner_kids.png'
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
         </Route>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<Login/>}/>
+     
       </Routes>
      </BrowserRouter>
      <Footer/>
