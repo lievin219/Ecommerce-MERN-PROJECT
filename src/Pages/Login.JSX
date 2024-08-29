@@ -23,7 +23,7 @@ const Login = () => {
         
        const LoginFunc=async()=>{
 
-    let responses=await fetch(' http://localhost:4000/Login',{
+    let responses=await fetch(' http://localhost:4000/login',{
        method:'POST', headers:{
         Accept:'application/json',
         'Content-Type':'application/json'
@@ -38,6 +38,9 @@ const Login = () => {
          window.location.replace('/')
        
        }
+      else{
+         alert(`it have failed!!`)
+      }
             
          
        }

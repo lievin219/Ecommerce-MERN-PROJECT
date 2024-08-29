@@ -15,36 +15,35 @@ import { ShopContect } from '../../Context/ShopContext'
 const Navbar = () => {
    const[authToken,setAuthToken]=useState(null)
 
-  useEffect(() => {
-    // Get the cookie using js-cookie
-    const token = Cookies.get('authToken');
-    console.log('auth token is ->',token) // Replace 'authToken' with your cookie name
-    setAuthToken(token); // Set the token in state
-}, []);
+ 
   const [menu,setMenu]=useState("shop")
   const {getTotlCartItems}=useContext(ShopContect)
    const menuRef=useRef()
 
     const dropdown_list=(e)=>{
-       menuRef.current.classList.toggle('nav-menu-visible')
-       e.target.classList.toggle('open')
+       menuRef.current.classList.toggle('nav-menu-visible')   
+       e.target.classList.toggle('open')   
     }
+  
+
+          
 
     //
-    const handleLogout = async () => {
-      try {
-          // Call your backend logout endpoint
-          await axios.post('http://localhost:4000/logout'); // Update with your actual endpoint
-
-          // Remove the authentication cookie
-          Cookies.remove('authToken'); // Replace 'authToken' with your actual cookie name
-
-          console.log('Logged out successfully');
-          // Optionally, redirect the user or update the UI state
-      } catch (error) {
-          console.error('Logout failed:', error.response?.data || error.message);
-      }
+  //   const handleLogout = async () => {
+  //    Cookies.remove('authokenii')   
+  //     window.location.replace('/Shop')    
+  // };
+  const removeAuthTokenCookie = () => {
+    document.cookie = `authTokenii=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; secure=true; samesite=None;`;
   };
+  useEffect(()=>{
+    setAuthToken()
+     const token=Cookies.get('authToken')
+     console.log('the tooken is -> ',token)
+  },[])
+  
+ 
+  
   return (
     <div className='navbar'>
      <div className='nav-logo'>
@@ -59,10 +58,10 @@ const Navbar = () => {
       <li onClick={()=>{setMenu("kids")}}><Link to='/kids' style={{textDecoration:'none'}}> Kids</Link> {menu==='kids' ?<hr/>:<></>}</li>
      </ul>
      <div className='nav-login-cart'>  
-      {authToken?<button>Logout</button>:<Link to='/login'> <button>login</button></Link>}
+      {authToken?<button onClick={()=>{removeAuthTokenCookie()}}>Logout</button>:<Link to='/login'> <button>login</button></Link>}
      
      <Link to='/cart'> <img src={cart_icon} alt="" /></Link> 
-      <button onClick={handleLogout}> logout </button>
+     
       <div className='nav-cart-count'>{getTotlCartItems()}</div>    
      </div>
     </div>
