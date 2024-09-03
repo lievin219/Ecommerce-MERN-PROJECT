@@ -34,12 +34,17 @@ const Navbar = () => {
   //     window.location.replace('/Shop')    
   // };
   const removeAuthTokenCookie = () => {
-    document.cookie = `authTokenii=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; secure=true; samesite=None;`;
+    document.cookie = "authTokenii=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=None; Secure";
+    window.location.replace('/login')
   };
   useEffect(()=>{
-    setAuthToken()
-     const token=Cookies.get('authToken')
-     console.log('the tooken is -> ',token)
+   
+     const token=Cookies.get('authTokenii')
+   
+     setAuthToken(token)
+
+
+    
   },[])
   
  

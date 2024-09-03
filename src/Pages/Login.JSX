@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './css/Login.css'
+import Cookies from 'js-cookie'
 import { useState } from 'react'
 import {useNavigate }from 'react-router-dom';
 const Login = () => {
@@ -10,6 +11,7 @@ const Login = () => {
          
 
      const[state,setState]=useState('Login')
+      const[getcookie,setGetcookie]=useState()
       const navigate=useNavigate()
       const[formData,setformData]=useState({
          role:"",
@@ -20,6 +22,11 @@ const Login = () => {
        const changeHandler=(e)=>{
           setformData({...formData,[e.target.name]:e.target.value})
        }
+        useEffect(()=>{
+                  const token=Cookies.get('authTokenii')
+                   setGetcookie(token)
+
+        },[])
         
        const LoginFunc=async()=>{
 
@@ -35,11 +42,14 @@ const Login = () => {
      let dataresponses= await responses.json()
        if(dataresponses.message){
          alert(`${dataresponses.message}`)
-         window.location.replace('/')
-       
+         window.location.replace('/shop')
+                                                   
        }
       else{
          alert(`it have failed!!`)
+
+
+         
       }
             
          
@@ -60,7 +70,7 @@ const Login = () => {
 
           if(responseData.success){
                alert('User registered Succesfully')
-               navigate.push('/')
+               window.location.replace('/login')
             
             }
            else if(responseData.status===400) {
