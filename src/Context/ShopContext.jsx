@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { createContext } from 'react'
+import Cookies from 'js-cookie'
 // import all_products from '../Components/Assets/Assets/all_product'
 // import all_product from '../Components/Assets/Assets/all_product'
 
@@ -12,7 +13,7 @@ import { createContext } from 'react'
       return cart;
 }
  const ShopContextProvider=(props)=>{
-    const [all_productse,setall_productse]=useState()
+    const [all_productse,setall_productse]=useState([])
     const[CartItems,setCartItem]=useState(getdefaoulcart());
     // const contextvalue={all_products,CartItem}
 
@@ -33,6 +34,21 @@ import { createContext } from 'react'
           } catch (err) {
               console.error('Error fetching products:', err);
           }
+
+          const Token=Cookies.get('authTokenii')
+           if(Token){
+              fetch('http://localhost:4000/gettocart',{
+                method: "POST",
+                headers: {
+                    Accept: 'application/json',  // Updated to 'application/json'
+                   'Authorization': `Bearer ${Token}`,   
+                    'Content-Type': "application/json"
+                },
+                body: ""
+                
+            
+              }).then((response)=>response.json()).then((data)=>setCartItem(data))
+           }
       }
       fetching();
   }, []);
@@ -55,18 +71,131 @@ import { createContext } from 'react'
        //   },[])
                                                    
                                                
-      const addtoCart=(itemId)=>{
-             setCartItem((prev)=>({
-                ...prev,[itemId]:prev[itemId]+1
+    //   const addtoCart=(itemId)=>{
+    //          setCartItem((prev)=>({
+    //             ...prev,[itemId]:prev[itemId]+1
                 
-             }
-            ))
+    //          }
+             
+    //         ))
+    //         if(Cookies.get('auth-tokenii')){
+    //             if(Cookies.get('auth-tokenii')){
+    //                fetch('http://localhost:4000/addtocart',{
+    //                  method:"POST",
+    //                  headers:{
+    //                  Accept:'application/json',
+    //                 'auth-token':`${Cookies.get('auth-tokenii')}`,
+    //                 'Content-Type':"application/json"},
+    //                 body:JSON.stringify({"itemId":itemId})    
+    //                }).then((response)=>
+    //                   response.json()
+    //                ).then((datas)=>
+                   
+    //                 setall_productse(datas))
+    //             }
+    //         }
                       
-      }
-      const removefromCart=(itemId)=>{
+    //   }
+
+    const addtoCart = async (itemId) => {
+        setCartItem((prev) => ({
+            ...prev,
+            [itemId]: prev[itemId] +1  // Ensure prev[itemId] is not undefined
+        }));
+    
+        const authToken = Cookies.get('authTokenii');
+        if (authToken) {
+            try {
+                const response = await fetch('http://localhost:4000/addtocart', {
+                    method: "POST",
+                    headers: {
+                        Accept: 'application/json',  // Updated to 'application/json'
+                       'Authorization': `Bearer ${authToken}`,   
+                        'Content-Type': "application/json"
+                    },
+                    body: JSON.stringify({"itemId": itemId })
+                    
+                });
+ console.log('data and item id is equal ,to =>',itemId)
+  console.log(" cookie from addocart is",authToken)
+
+
+    
+                const data = await response.json();
+                if(data.error){
+                console.log('the data are from add to cart  ',data);}
+                setall_productse(data);  // Assuming setall_productse is correct
+            } catch (error) {
+                console.error("Error adding to cart:", error);
+            }
+        }
+    }
+    
+
+    // const addtoCart = async (itemId) => {
+    //     setCartItem((prev) => ({
+    //         ...prev,
+    //         [itemId]: (prev[itemId] || 0) + 1  // Ensure prev[itemId] is not undefined
+    //     }));
+    
+    //     const authToken = Cookies.get('auth-tokenii');
+    //     if (authToken) {
+    //         await fetch('http://localhost:4000/addtocart', {
+    //             method: "POST",
+    //             headers: {
+    //                 Accept: 'application/json',  // Updated to 'application/json'
+    //                 'auth-tokenii': authToken,
+    //                 'Content-Type': "application/json"
+    //             },
+    //             body: JSON.stringify({ "itemId": itemId }
+
+    //         )})
+    //         .then((response) => response.json() ,console.log(response.json()))
+    //         .then((data) => {
+    //             setall_productse(data);  // Assuming setall_productse is correct
+    //         })
+    //         .catch((error) => {
+    //             console.error("Error adding to cart:", error);
+    //         });
+    //     }
+    // }
+    
+     
+      const removefromCart=async(itemId)=>{
         setCartItem((prev)=>({
            ...prev,[itemId]:prev[itemId]-1
         }))
+        const authToken = Cookies.get('authTokenii');
+          console.log('the cookie is ',authToken)
+        if (authToken) {
+            try {
+                const response = await fetch('http://localhost:4000/removefromcart', {
+                    method: "POST",
+                    headers: {
+                        Accept: 'application/json',  // Updated to 'application/json'
+                        
+                        'Authorization': `Bearer ${authToken}`,
+                        'Content-Type': "application/json"
+                    },
+                    body: JSON.stringify({"itemId": itemId })
+                });
+
+
+    
+                const data = await response.json();
+                console.log('the data  from remove from cart',data);
+                console.log('and the cookie for the addtocart is =>',authToken)
+                setall_productse(data);  // Assuming setall_productse is correct
+            } catch (error) {
+                console.error("Error adding to cart:", error);
+            }
+        }
+        else{
+             alert('no cookie found')
+        }
+    
+    
+
  }
   const getTotalCartAmount=()=>{
    let totalamount=0;
@@ -89,6 +218,8 @@ import { createContext } from 'react'
         for( const item in CartItems){
           if(CartItems[item]>0){
              totalItems +=CartItems[item]
+     
+
           }
                                
         }

@@ -7,11 +7,21 @@ import DescriptionBox from '../Components/DescriptionBox/DescriptionBox.jsx'
 import ProductDisplay from '../Components/productDisplay/ProductDisplay.jsx'
 
  const  Production=()=>{
-     const  {all_products}=useContext(ShopContect)
+     const  {all_productse}=useContext(ShopContect)
      const{productId}=useParams()
-      const product=all_products.find((e)=>{
-          return  e.id===Number(productId)
-      })
+      console.log('alll products are here',all_productse)
+      // const product=all_productse.find((e)=>{
+      //     return  e.id===Number(productId)
+
+
+
+      // })
+      const product = Array.isArray(all_productse)
+      ? all_productse.find((e) => e.id === Number(productId))
+      : null;
+      if (!product) {
+        return <div>Product not found!</div>;
+      }
     return(
         <div>
           <BreadCrums product={product}/>
