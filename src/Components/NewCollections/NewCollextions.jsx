@@ -12,7 +12,7 @@ const NewCollextions = () => {
       async function fetchinge(){
 try{
       
-       const data=await  fetch('http://localhost:4000/newcollections')
+       const data=await  fetch('https://backend-mernproject-u66q.onrender.com/newcollections')
         const response=await data.json()
          console.log('the respone is ',response)
         setNew_collection(response)}catch(err){

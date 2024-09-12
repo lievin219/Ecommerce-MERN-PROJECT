@@ -21,7 +21,7 @@ import Cookies from 'js-cookie'
     useEffect(() => {
       async function fetching() {
           try {
-              const response = await fetch('http://localhost:4000/allproducts');
+              const response = await fetch('https://backend-mernproject-u66q.onrender.com/allproducts');
               const Finaldata = await response.json();
   
               // Assuming 'message' contains the array of products
@@ -37,7 +37,7 @@ import Cookies from 'js-cookie'
 
           const Token=Cookies.get('authTokenii')
            if(Token){
-              fetch('http://localhost:4000/gettocart',{
+              fetch('https://backend-mernproject-u66q.onrender.com/gettocart',{
                 method: "POST",
                 headers: {
                     Accept: 'application/json',  // Updated to 'application/json'
@@ -106,7 +106,7 @@ import Cookies from 'js-cookie'
         const authToken = Cookies.get('authTokenii');
         if (authToken) {
             try {
-                const response = await fetch('http://localhost:4000/addtocart', {
+                const response = await fetch('https://backend-mernproject-u66q.onrender.com/addtocart', {
                     method: "POST",
                     headers: {
                         Accept: 'application/json',  // Updated to 'application/json'
@@ -169,7 +169,7 @@ import Cookies from 'js-cookie'
           console.log('the cookie is ',authToken)
         if (authToken) {
             try {
-                const response = await fetch('http://localhost:4000/removefromcart', {
+                const response = await fetch('https://backend-mernproject-u66q.onrender.com/removefromcart', {
                     method: "POST",
                     headers: {
                         Accept: 'application/json',  // Updated to 'application/json'
@@ -199,14 +199,15 @@ import Cookies from 'js-cookie'
  }
   const getTotalCartAmount=()=>{
    let totalamount=0;
-   // for(let items in CartItems){
-   //     if(CartItems[items] > 0){
-   //        let itemInfo=all_products.find((product)=>product.id===Number(items))
-   //        totalamount +=itemInfo.new_price*CartItems[items]
-   //       // totalamount +='it is working but no amount is being dispalyed' 
-   //     }
+   for(let items in CartItems){
+       if(CartItems[items] > 0){
+          let itemInfo=all_productse.find((product)=>product.id===Number(items))
+          totalamount +=itemInfo.new_price*CartItems[items]
+         // totalamount +='it is working but no amount is being dispalyed' 
+       }
+       
            
-   // }
+   }
                             
 
    return totalamount

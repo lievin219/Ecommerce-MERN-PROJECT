@@ -7,7 +7,7 @@ const Popular = () => {
    const [populars,setPopulars]=useState([])
    useEffect(()=>{
     async function fetchdata(){
-          const popular_women=await fetch('http://localhost:4000/women')
+          const popular_women=await fetch('https://backend-mernproject-u66q.onrender.com/women')
           const data=await popular_women.json()
            console.log('thepopular in womens are',data)
            setPopulars(data)
