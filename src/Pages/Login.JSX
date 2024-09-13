@@ -47,7 +47,7 @@ const Login = () => {
                                                    
        }
       else{
-         alert(`it have failed!!`)
+         alert(`input password or email may not be correct`)
 
 
          
