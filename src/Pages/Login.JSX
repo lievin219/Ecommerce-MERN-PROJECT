@@ -30,7 +30,7 @@ const Login = () => {
         
        const LoginFunc=async()=>{
 
-    let responses=await fetch(' http://localhost:4000/login',{
+    let responses=await fetch('https://backend-mernproject-u66q.onrender.com/login',{
        method:'POST', headers:{
         Accept:'application/json',
         'Content-Type':'application/json'
@@ -57,7 +57,7 @@ const Login = () => {
          const Signup= async()=>{
            let responseData;
 
-      try{   let response= await fetch('http://localhost:4000/Register',{
+      try{   let response= await fetch('https://backend-mernproject-u66q.onrender.com//Register',{
              method:"POST",
              headers:{
                Accept:'application/json',
