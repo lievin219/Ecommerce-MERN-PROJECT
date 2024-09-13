@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './css/Login.css'
 import Cookies from 'js-cookie'
 import { useState } from 'react'
-import {useNavigate }from 'react-router-dom';
+import {replace, useNavigate }from 'react-router-dom';
 const Login = () => {
 
 
@@ -13,6 +13,7 @@ const Login = () => {
      const[state,setState]=useState('Login')
       const[getcookie,setGetcookie]=useState()
       const navigate=useNavigate()
+      
       const[formData,setformData]=useState({
          role:"",
          email:"",
@@ -42,7 +43,7 @@ const Login = () => {
      let dataresponses= await responses.json()
        if(dataresponses.message){
          alert(`${dataresponses.message}`)
-         window.location.replace('/shop')
+     navigate('/shop',{replace:true})
                                                    
        }
       else{
@@ -57,7 +58,7 @@ const Login = () => {
          const Signup= async()=>{
            let responseData;
 
-      try{   let response= await fetch('https://backend-mernproject-u66q.onrender.com//Register',{
+      try{   let response= await fetch('https://backend-mernproject-u66q.onrender.com/Register',{
              method:"POST",
              headers:{
                Accept:'application/json',
@@ -70,7 +71,7 @@ const Login = () => {
 
           if(responseData.success){
                alert('User registered Succesfully')
-               window.location.replace('/login')
+              navigate('/login',{replace:true})
             
             }
            else if(responseData.status===400) {
