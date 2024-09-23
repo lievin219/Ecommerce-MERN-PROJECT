@@ -37,16 +37,21 @@ const Navbar = () => {
     document.cookie = "authTokenii=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=None; Secure";
     window.location.replace('/login')
   };
-  useEffect(()=>{
+
+  useEffect(() => {
+    console.log('Document cookie: ', document.cookie);
+  }, []);
+  
+  // useEffect(()=>{
    
-     const token=Cookies.get('authTokenii')
-      console.log('retrieved token is ',token)
+  //    const token=Cookies.get('authTokenii')
+  //     console.log('retrieved token is ',token)
    
-     setAuthToken(token)
+  //    setAuthToken(token)
 
 
     
-  },[])
+  // },[])
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
  
   
