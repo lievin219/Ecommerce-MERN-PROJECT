@@ -39,7 +39,9 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    console.log('Document cookie: ', document.cookie);
+     const token=Cookies.get('authTokenii')
+     console.log('token is',token)
+      setAuthToken(token)
   }, []);
   
   // useEffect(()=>{

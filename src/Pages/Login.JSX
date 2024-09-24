@@ -30,10 +30,10 @@ const Login = () => {
         },[])
         
        const LoginFunc=async()=>{
-
+        const authToken=Cookies.get('authTokenii')
     let responses=await fetch('https://backend-mernproject-u66q.onrender.com/login',{
        method:'POST', headers:{
-        Accept:'application/json',
+       'Authorization': `Bearer ${authToken}`,
         'Content-Type':'application/json'
       },
       credentials:'include',
