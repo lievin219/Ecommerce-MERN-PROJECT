@@ -46,7 +46,7 @@ const Navbar = () => {
   useEffect(() => {
     const fetchToken = setTimeout(() => {
         const token = Cookies.get('authTokenii');
-        setGetcookie(token);
+        setAuthToken(token);
     }, 500); // Delay to allow cookie to set
 
     return () => clearTimeout(fetchToken); // Cleanup the timeout
