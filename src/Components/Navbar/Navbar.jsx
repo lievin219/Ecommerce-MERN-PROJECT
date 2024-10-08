@@ -40,7 +40,7 @@ const Navbar = () => {
 
   useEffect(() => {
      const token=Cookies.get('authTokenii')
-     console.log('token is',token)
+     console.log('token is here =>',token)
       setAuthToken(token)
   }, []);
   
