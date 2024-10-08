@@ -21,7 +21,7 @@ import Cookies from 'js-cookie'
     useEffect(() => {
       async function fetching() {
           try {
-              const response = await fetch('http://localhost:4000/allproducts');
+              const response = await fetch('https://backend-mernproject-u66q.onrender.com/allproducts');
               const Finaldata = await response.json();
   
               // Assuming 'message' contains the array of products
@@ -37,7 +37,7 @@ import Cookies from 'js-cookie'
 
           const Token=Cookies.get('authTokenii')
            if(Token){
-              fetch('http://localhost:4000/gettocart',{
+              fetch('https://backend-mernproject-u66q.onrender.com/gettocart',{
                 method: "POST",
                 headers: {
                     Accept: 'application/json',  // Updated to 'application/json'
