@@ -38,11 +38,19 @@ const Navbar = () => {
     window.location.replace('/login')
   };
 
+  // useEffect(() => {
+  //    const token=Cookies.get('authTokenii')
+  //    console.log('token is here =>',token)
+  //     setAuthToken(token)
+  // }, []);
   useEffect(() => {
-     const token=Cookies.get('authTokenii')
-     console.log('token is here =>',token)
-      setAuthToken(token)
-  }, []);
+    const fetchToken = setTimeout(() => {
+        const token = Cookies.get('authTokenii');
+        setGetcookie(token);
+    }, 500); // Delay to allow cookie to set
+
+    return () => clearTimeout(fetchToken); // Cleanup the timeout
+}, []);
   
   // useEffect(()=>{
    
