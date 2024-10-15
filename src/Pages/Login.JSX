@@ -189,7 +189,7 @@ const Login = () => {
       if (isSignedIn) {
         alert('for the user')
         navigate('/cart', { replace: true })
-       
+        window.location.reload()
       } else {
         alert("Login failed, unable to sign in")
       }
