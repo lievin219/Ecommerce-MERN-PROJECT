@@ -16,6 +16,7 @@ const Shopcategory = (props) => {
 
   const getcookies = () => {
     const cookie = Cookies.get('authTokenii');
+
     setCookie(cookie);
   };
 
@@ -57,7 +58,7 @@ const Shopcategory = (props) => {
                 }
               })
             ) : (
-              <h2>No products found</h2>
+              <h2>No products found wit same category</h2>
             )
           ) : (
             <h1>Please <Link to='/login'>login here</Link> to see products in the store</h1>

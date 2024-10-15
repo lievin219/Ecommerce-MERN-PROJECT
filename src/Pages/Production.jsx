@@ -9,7 +9,7 @@ import ProductDisplay from '../Components/productDisplay/ProductDisplay.jsx'
  const  Production=()=>{
      const  {all_productse}=useContext(ShopContect)
      const{productId}=useParams()
-      console.log('alll products are here',all_productse)
+      console.log('alll products are here in the cart',all_productse)
       // const product=all_productse.find((e)=>{
       //     return  e.id===Number(productId)
 

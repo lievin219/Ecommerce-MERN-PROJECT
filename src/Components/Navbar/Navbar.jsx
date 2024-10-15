@@ -60,11 +60,7 @@ const Navbar = () => {
 
           
 
-    //
-  //   const handleLogout = async () => {
-  //    Cookies.remove('authokenii')   
-  //     window.location.replace('/Shop')    
-  // };
+   
   useEffect(() => {
           const token = Cookies.get('authTokenii');
           setAuthToken(token);
@@ -77,36 +73,7 @@ const Navbar = () => {
      
          
     };
-  // const removeAuthTokenCookie = () => {
-  //   document.cookie = "authTokenii=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=None; Secure";
-  //   window.location.replace('/login')
-  // };
-
-  // useEffect(() => {
-  //    const token=Cookies.get('authTokenii')
-  //    console.log('token is here =>',token)
-  //     setAuthToken(token)
-  // }, []);
-//   useEffect(() => {
-//     const fetchToken = setTimeout(() => {
-//         const token = Cookies.get('authTokenii');
-//         setAuthToken(token);
-//     }, []); // Delay to allow cookie to set
-
-//     return () => clearTimeout(fetchToken); // Cleanup the timeout
-// }, []);
-  
-  // useEffect(()=>{
-   
-  //    const token=Cookies.get('authTokenii')
-  //     console.log('retrieved token is ',token)
-   
-  //    setAuthToken(token)
-
-
-    
-  // },[])
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
  
   
   return (
