@@ -2,15 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import AuthProvider from 'react-auth-kit';
+
+import createStore from 'react-auth-kit/createStore';
 import reportWebVitals from './reportWebVitals';
  import ShopContextProvider from './Context/ShopContext';
-
+ const store = createStore({
+  authType: 'cookie',
+  authName: 'authTokenii',
+  cookieSecure: false,
+  cookieDomain: window.location.hostname,
+});
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-  <ShopContextProvider> 
-    <App/>
-    </ShopContextProvider>
+  <AuthProvider 
+  authType="cookie"
+    authName="authTokenii"
+    cookieSecure={false}
+    store={store}>
+  <ShopContextProvider>
+    <App />
+  </ShopContextProvider>
+</AuthProvider>
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>

@@ -3,6 +3,7 @@ import '../Navbar/Navbar.css'
 import logo from '../Assets/Assets/logo.png'
 import cart_icon from '../Assets/Assets/cart_icon.png'
 import Cookies from 'js-cookie';
+import {AuthProvider} from 'react-auth-kit'
 import axios from 'axios'
 import { Link } from 'react-router-dom'   
 // import nav_dropdown from '../Assets/Assets/nav_dropdown.png'
@@ -10,6 +11,37 @@ import { Link } from 'react-router-dom'
 import drop from '../Assets/Assets/drop.jpg'
 import { ShopContect } from '../../Context/ShopContext'
 
+// const Navbar = () => {
+//   const [authToken, setAuthToken] = useState(null);
+//   const { getTotlCartItems } = useContext(ShopContect);
+//   const menuRef = useRef();
+
+//   const dropdown_list = (e) => {
+//       menuRef.current.classList.toggle('nav-menu-visible');
+//       e.target.classList.toggle('open');
+//   };
+
+//   const removeAuthTokenCookie = () => {
+//       Cookies.remove('authTokenii', { path: '/' });
+//       setAuthToken(null);  // Update state immediately
+//       window.location.replace('/login');
+//   };
+
+//   useEffect(() => {
+//       const token = Cookies.get('authTokenii');
+//       setAuthToken(token);
+//   }, []); // Initially check cookie
+
+//   return (
+//       <div className='navbar'>
+//           {/* Navbar UI elements */}
+//           {authToken ? 
+//               <button onClick={removeAuthTokenCookie}>Logout</button> :
+//               <Link to='/login'><button>Login</button></Link>}
+//       </div>
+//   );
+// };
+//  export default Navbar
 
 
 const Navbar = () => {
@@ -17,7 +49,7 @@ const Navbar = () => {
 
  
   const [menu,setMenu]=useState("shop")
-  const {getTotlCartItems}=useContext(ShopContect)
+  const { getTotlCartItems}=useContext(ShopContect)
    const menuRef=useRef()
 
     const dropdown_list=(e)=>{
@@ -33,24 +65,36 @@ const Navbar = () => {
   //    Cookies.remove('authokenii')   
   //     window.location.replace('/Shop')    
   // };
-  const removeAuthTokenCookie = () => {
-    document.cookie = "authTokenii=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=None; Secure";
-    window.location.replace('/login')
-  };
+  useEffect(() => {
+          const token = Cookies.get('authTokenii');
+          setAuthToken(token);
+      }, []); // Initially check cookie
+      const removeAuthTokenCookie = () => {
+        Cookies.remove('authTokenii', { path: '/' });
+        setAuthToken(null); 
+        window.location.reload() // Update state immediately
+        window.location.replace('/login')
+     
+         
+    };
+  // const removeAuthTokenCookie = () => {
+  //   document.cookie = "authTokenii=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=None; Secure";
+  //   window.location.replace('/login')
+  // };
 
   // useEffect(() => {
   //    const token=Cookies.get('authTokenii')
   //    console.log('token is here =>',token)
   //     setAuthToken(token)
   // }, []);
-  useEffect(() => {
-    const fetchToken = setTimeout(() => {
-        const token = Cookies.get('authTokenii');
-        setAuthToken(token);
-    }, 500); // Delay to allow cookie to set
+//   useEffect(() => {
+//     const fetchToken = setTimeout(() => {
+//         const token = Cookies.get('authTokenii');
+//         setAuthToken(token);
+//     }, []); // Delay to allow cookie to set
 
-    return () => clearTimeout(fetchToken); // Cleanup the timeout
-}, []);
+//     return () => clearTimeout(fetchToken); // Cleanup the timeout
+// }, []);
   
   // useEffect(()=>{
    
