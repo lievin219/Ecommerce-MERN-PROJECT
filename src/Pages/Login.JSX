@@ -188,8 +188,8 @@ const Login = () => {
 
       if (isSignedIn) {
         alert('for the user')
-        navigate('/shop', { replace: true })
-        window.location.reload()
+        navigate('/cart', { replace: true })
+       
       } else {
         alert("Login failed, unable to sign in")
       }
@@ -212,8 +212,8 @@ const Login = () => {
       let responseData = await response.json();
 
       if (responseData.success) {
-        alert('User registered successfully')
         navigate('/login', { replace: true })
+     
       } else {
         alert(`Error: ${responseData.error}`)
       }
