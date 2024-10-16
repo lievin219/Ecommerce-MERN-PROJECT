@@ -10,7 +10,9 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const notify = () => toast.success("Login Succesfully!");
+  const notify_signup=()=>toast.success("User Registred Succesfully! Go to Login ");
   const notify_error = () => toast.error("Email Or Password Not Found !");
+  const notify_error_signup = () => toast.error("Email Or Password Not Correct!");
   const signin = useSignIn()
   const [state, setState] = useState('Login')
   const [getcookie, setGetcookie] = useState()
@@ -85,10 +87,15 @@ const Login = () => {
       let responseData = await response.json();
 
       if (responseData.success) {
-        navigate('/login', { replace: true })
+      notify_signup()
+        setTimeout(() => {
+          navigate('/cart', { replace: true });
+          window.location.reload();
+        }, 3000); 
      
       } else {
-        alert(`Error: ${responseData.error}`)
+        notify_error_signup ()
+        setformData({...formData,email:"",password:""})
       }
     } catch (err) {
       alert("Registration failed")

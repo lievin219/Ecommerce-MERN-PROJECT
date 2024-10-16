@@ -40,8 +40,9 @@ const Navbar = () => {
       const removeAuthTokenCookie = () => {
         Cookies.remove('authTokenii', { path: '/' });
         setAuthToken(null); 
-        window.location.reload() // Update state immediately
         navigate('/login')
+        window.location.reload() // Update state immediately
+      
      
          
     };
