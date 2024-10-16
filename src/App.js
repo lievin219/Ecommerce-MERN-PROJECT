@@ -42,39 +42,10 @@ function App() {
      </Router>
      
      <Footer/>
-     
+           
         
     </div>
   );
 }
 
 export default App;
-// import React from 'react';
-// import ReactDOM from 'react-dom/client';
-// import './index.css';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
-// import ShopContextProvider from './Context/ShopContext';
-// import AuthProvider from 'react-auth-kit';
-// import createStore from 'react-auth-kit/createStore';
-
-// // Create the store for react-auth-kit
-// const store = createStore({
-//   authType: 'cookie',
-//   authName: 'authTokenii',
-//   cookieSecure: false,
-//   cookieDomain: window.location.hostname,
-// });
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <AuthProvider store={store}>
-//     <ShopContextProvider>
-//       <App />
-//     </ShopContextProvider>
-//   </AuthProvider>
-// );
-
-// // If you want to start measuring performance in your app, pass a function
-// // to log results (for example: reportWebVitals(console.log))
-// reportWebVitals();

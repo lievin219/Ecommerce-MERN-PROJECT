@@ -69,7 +69,7 @@ const Navbar = () => {
         Cookies.remove('authTokenii', { path: '/' });
         setAuthToken(null); 
         window.location.reload() // Update state immediately
-        window.location.replace('./pages/login')
+        window.location.replace('/login')
      
          
     };

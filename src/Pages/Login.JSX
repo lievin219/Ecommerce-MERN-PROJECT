@@ -56,12 +56,11 @@ const Login = () => {
         notify()
         setformData({...formData,email:"",password:""})
         setTimeout(() => {
-          navigate('/cart', { replace: true });
+          navigate('/shop', { replace: true });
           window.location.reload();
         }, 3000); 
        
-        // navigate('/cart', { replace: true })
-        // window.location.reload()
+        
       } else {
         alert("Login failed, unable to sign in")
       }
