@@ -2,6 +2,7 @@
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom';
 
 
 import Shop from './Pages/Shop';
@@ -24,7 +25,7 @@ function App() {
     
     <div>
       
-      <BrowserRouter>
+      <Router>
       <Navbar></Navbar>
       <Routes>
         <Route path='/shop' element={<Shop></Shop>}/>
@@ -38,7 +39,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
      
       </Routes>
-     </BrowserRouter>
+     </Router>
      
      <Footer/>
      

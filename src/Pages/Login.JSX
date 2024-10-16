@@ -3,10 +3,14 @@
 import React, { useEffect, useState } from 'react'
 import './css/Login.css'
 import Cookies from 'js-cookie'
+import { ToastContainer, toast } from 'react-toastify';
 import useSignIn from 'react-auth-kit/hooks/useSignIn'
+import 'react-toastify/dist/ReactToastify.css'
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const notify = () => toast.success("Login Succesfully!");
+  const notify_error = () => toast.error("Email Or Password Not Found !");
   const signin = useSignIn()
   const [state, setState] = useState('Login')
   const [getcookie, setGetcookie] = useState()
@@ -49,14 +53,22 @@ const Login = () => {
       });
 
       if (isSignedIn) {
-        alert('for the user')
-        navigate('/cart', { replace: true })
-        window.location.reload()
+        notify()
+        setformData({...formData,email:"",password:""})
+        setTimeout(() => {
+          navigate('/cart', { replace: true });
+          window.location.reload();
+        }, 3000); 
+       
+        // navigate('/cart', { replace: true })
+        // window.location.reload()
       } else {
         alert("Login failed, unable to sign in")
       }
     } else {
-      alert("Invalid email or password")                                                        
+      notify_error()
+     setformData({...formData,email:"",password:""})
+                                            
     }
   }
 
@@ -104,6 +116,7 @@ const Login = () => {
           <p>By continuing, you agree to the terms of use and policy</p>
         </div>
       </div>
+      <ToastContainer />
     </div>
   )
 }
