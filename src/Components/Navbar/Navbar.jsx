@@ -5,46 +5,18 @@ import cart_icon from '../Assets/Assets/cart_icon.png'
 import Cookies from 'js-cookie';
 import {AuthProvider} from 'react-auth-kit'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'   
 // import nav_dropdown from '../Assets/Assets/nav_dropdown.png'
 // import nav_dropi from '../Assets/Assets/nav_dropi.webp'
 import drop from '../Assets/Assets/drop.jpg'
 import { ShopContect } from '../../Context/ShopContext'
 
-// const Navbar = () => {
-//   const [authToken, setAuthToken] = useState(null);
-//   const { getTotlCartItems } = useContext(ShopContect);
-//   const menuRef = useRef();
 
-//   const dropdown_list = (e) => {
-//       menuRef.current.classList.toggle('nav-menu-visible');
-//       e.target.classList.toggle('open');
-//   };
-
-//   const removeAuthTokenCookie = () => {
-//       Cookies.remove('authTokenii', { path: '/' });
-//       setAuthToken(null);  // Update state immediately
-//       window.location.replace('/login');
-//   };
-
-//   useEffect(() => {
-//       const token = Cookies.get('authTokenii');
-//       setAuthToken(token);
-//   }, []); // Initially check cookie
-
-//   return (
-//       <div className='navbar'>
-//           {/* Navbar UI elements */}
-//           {authToken ? 
-//               <button onClick={removeAuthTokenCookie}>Logout</button> :
-//               <Link to='/login'><button>Login</button></Link>}
-//       </div>
-//   );
-// };
-//  export default Navbar
 
 
 const Navbar = () => {
+  const navigate=useNavigate()
    const[authToken,setAuthToken]=useState(null)
 
  
@@ -69,7 +41,7 @@ const Navbar = () => {
         Cookies.remove('authTokenii', { path: '/' });
         setAuthToken(null); 
         window.location.reload() // Update state immediately
-        window.location.replace('/login')
+        navigate('/login')
      
          
     };
