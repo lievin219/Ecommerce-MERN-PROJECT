@@ -28,13 +28,14 @@ const Login = () => {
   }
 
   useEffect(() => {
+
     const token = Cookies.get('authTokenii')
     setGetcookie(token)
   }, [])
 
   const LoginFunc = async () => {
     const authToken = Cookies.get('authTokenii')
-    let responses = await fetch('https://backend-mernproject-u66q.onrender.com/login', {
+    let responses = await fetch('http://localhost:4000/register', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${authToken}`,
@@ -75,27 +76,28 @@ const Login = () => {
 
   const Signup = async () => {
     try {
-      let response = await fetch('https://backend-mernproject-u66q.onrender.com/Register', {
+      let response = await fetch('http://localhost:4000/Register', {
         method: "POST",
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json'
         },
         credentials: "include",
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData)    
       })
       let responseData = await response.json();
-
+     
+   
       if (responseData.success) {
       notify_signup()
         setTimeout(() => {
-          navigate('/cart', { replace: true });
+          navigate('/login', { replace: true });
           window.location.reload();
         }, 3000); 
      
       } else {
         notify_error_signup ()
-        setformData({...formData,email:"",password:""})
+        setformData({...formData,email:"",password:"",role:""})
       }
     } catch (err) {
       alert("Registration failed")
@@ -108,7 +110,7 @@ const Login = () => {
         <h1>{state}</h1>
         <div className='loginsignuppage-fields'>
           {state === 'Sign up' && <input type="text" name='role' onChange={changeHandler} value={formData.role} placeholder='Your Role' />}
-          <input type="text" name='email' onChange={changeHandler} value={formData.email} placeholder='Email Address' />
+          <input type="email" name='email' onChange={changeHandler} value={formData.email} placeholder='Email Address' />
           <input type="password" onChange={changeHandler} name='password' value={formData.password} placeholder='Enter your Password' />
         </div>
         <button onClick={() => {
@@ -119,7 +121,7 @@ const Login = () => {
           <p className='loginsignup-login'>Already have an account? <span onClick={() => setState("Login")}>Login Here</span></p>}
         <div className='loginsignup-agree'>
           <input type="checkbox" />
-          <p>By continuing, you agree to the terms of use and policy</p>
+          <p>By continuing, you agree to the terms of use and policy</p> 
         </div>
       </div>
       <ToastContainer />

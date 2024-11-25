@@ -67,7 +67,7 @@
   margin-top: 8px;
 }
 }
-@media(max-width:500px){
+@media(max-width:500px){ 
  
  .collection{
       display: grid;

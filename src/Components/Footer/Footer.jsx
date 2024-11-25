@@ -33,7 +33,7 @@ const Footer = () => {
                    <div className='footer-icons-container'>
                 <img src={whatsapp_icon} alt="" />
 
-            </div>
+            </div>   
 
         </div>
               <div className='footer-copyright'>

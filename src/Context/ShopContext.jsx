@@ -62,9 +62,9 @@ import Cookies from 'js-cookie'
         setCartItem((prev) => ({
             ...prev,
             [itemId]: prev[itemId] +1 
-        }));
+        }));                                                                                    
     
-        const authToken = Cookies.get('authTokenii');
+        const authToken = Cookies.get('authTokenii')          
         if (authToken) {
             try {
                 const response = await fetch('https://backend-mernproject-u66q.onrender.com/addtocart', {
@@ -124,6 +124,7 @@ import Cookies from 'js-cookie'
                 console.error("Error adding to cart:", error);
             }
         }
+        
         else{
              alert('no cookie found')
         }
@@ -137,7 +138,7 @@ const getTotlCartItems=()=>{
     let totalItems=0;
      for( const item in CartItems){
        if(CartItems[item]>0){
-          totalItems +=CartItems[item]
+          totalItems +=CartItems[item]    
   
 
        }
@@ -157,7 +158,9 @@ const getTotalCartAmount = () => {
         if (itemInfo) {
           console.log('Item info of new price is ->', itemInfo);
           totalAmount = totalAmount + itemInfo.new_price * CartItems[items];
-        } else {
+        }
+        // while itemInfo is not found 
+        else {
           console.log(`Product with id ${items} not found in all_productse.`);
         }
       }
