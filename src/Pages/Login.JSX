@@ -35,7 +35,7 @@ const Login = () => {
 
   const LoginFunc = async () => {
     const authToken = Cookies.get('authTokenii')
-    let responses = await fetch('http://localhost:4000/register', {
+    let responses = await fetch('https://backend-mernproject-u66q.onrender.com/login', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${authToken}`,
@@ -76,7 +76,7 @@ const Login = () => {
 
   const Signup = async () => {
     try {
-      let response = await fetch('http://localhost:4000/Register', {
+      let response = await fetch('https://backend-mernproject-u66q.onrender.com/Register', {
         method: "POST",
         headers: {
           Accept: 'application/json',
@@ -100,7 +100,7 @@ const Login = () => {
         setformData({...formData,email:"",password:"",role:""})
       }
     } catch (err) {
-      alert("Registration failed")
+      alert(`Registration failed due to ${err}`)
     }
   }
 
